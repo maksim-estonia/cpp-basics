@@ -6,4 +6,7 @@
 [Code syle and coding guidelines](https://named-data.net/doc/ndn-cpp-dev/0.4.0/code-style.html)
 
 [riptutorial.com](https://riptutorial.com/cplusplus)
- 
+
+[design patterns](https://refactoring.guru/design-patterns/catalog)
+
+[refactoring](https://refactoring.guru/refactoring)
