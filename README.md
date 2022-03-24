@@ -10,3 +10,7 @@
 [design patterns](https://refactoring.guru/design-patterns/catalog)
 
 [refactoring](https://refactoring.guru/refactoring)
+
+[Const Correctness](https://www.cprogramming.com/tutorial/const_correctness.html)
+
+[Multithreading in C++](https://www.geeksforgeeks.org/multithreading-in-cpp/)
