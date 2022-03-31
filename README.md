@@ -18,3 +18,7 @@
 [Command line arguments in C/C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
 
 [std::unique_ptr](https://en.cppreference.com/w/cpp/memory/unique_ptr)
+
+[Exceptions](https://riptutorial.com/cplusplus/topic/1354/exceptions)
+
+[Build options controlling the Preprocessor](https://gcc.gnu.org/onlinedocs/gcc/Preprocessor-Options.html)
