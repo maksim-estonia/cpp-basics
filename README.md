@@ -16,3 +16,5 @@
 [Multithreading in C++](https://www.geeksforgeeks.org/multithreading-in-cpp/)
 
 [Command line arguments in C/C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+
+[std::unique_ptr](https://en.cppreference.com/w/cpp/memory/unique_ptr)
