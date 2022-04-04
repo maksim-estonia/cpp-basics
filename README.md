@@ -22,3 +22,7 @@
 [Exceptions](https://riptutorial.com/cplusplus/topic/1354/exceptions)
 
 [Build options controlling the Preprocessor](https://gcc.gnu.org/onlinedocs/gcc/Preprocessor-Options.html)
+
+[Factory pattern using unique_ptr in c++](https://stackoverflow.com/questions/27282453/factory-pattern-using-unique-ptr-in-c)
+
+[Exceptions-2](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm)
