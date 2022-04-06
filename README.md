@@ -26,3 +26,8 @@
 [Factory pattern using unique_ptr in c++](https://stackoverflow.com/questions/27282453/factory-pattern-using-unique-ptr-in-c)
 
 [Exceptions-2](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm)
+
+[Pipe: read/write synchronization](https://stackoverflow.com/questions/66376771/how-to-synchronize-read-and-write-in-the-pipe-in-c)
+
+[Interprocess communication linux channels](https://opensource.com/article/19/4/interprocess-communication-linux-channels)
+
