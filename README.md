@@ -25,16 +25,17 @@
 ## Code snippets
 
 - [multithreading](https://www.geeksforgeeks.org/multithreading-in-cpp/)
-  - code repo: `./multithreading`
+  - code: `./multithreading`
 - [command line arguments](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
-  - code repo: `./command-line-arguments`
+  - code: `./command-line-arguments`
 - Interprocess communication 
   - [part 1](https://opensource.com/article/19/4/interprocess-communication-linux-storage)
   - [part 2](https://opensource.com/article/19/4/interprocess-communication-linux-channels)
-  - code repo pipe
-  - code repo queue
-  - code repo shm
+  - code: pipe
+  - code: queue
+  - code: shm
 - File (buffered) reading/writing
+  - code: `./read-write-file`
   
 
 
