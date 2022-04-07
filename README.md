@@ -31,9 +31,9 @@
 - Interprocess communication 
   - [part 1](https://opensource.com/article/19/4/interprocess-communication-linux-storage)
   - [part 2](https://opensource.com/article/19/4/interprocess-communication-linux-channels)
-  - code: pipe
-  - code: queue
-  - code: shm
+  - code: `./ipc/pipe-file-transfer`
+  - code: `./ipc/queue-file-transfer`
+  - code: `./ipc/shm-file-transfer`
 - File (buffered) reading/writing
   - code: `./read-write-file`
   
