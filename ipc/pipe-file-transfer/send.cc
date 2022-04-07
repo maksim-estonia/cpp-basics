@@ -11,7 +11,7 @@
 #include <unistd.h>     /* write() */
 #include <fcntl.h>      /* O_CREAT, O_WRONLY */
 
-#define BUFFERSIZE  10
+#define BUFFERSIZE  1024
 
 int main() {
     /* variables for reading from readFile */

@@ -17,6 +17,7 @@ int main() {
     std::fstream writeFile;
     int n = 0;  /* keeping track of number of full buffers sent */
 
+    /* open readFile and writeFile */
     readFile.open(readPath, std::fstream::in);
     writeFile.open(writePath, std::fstream::out | std::fstream::trunc);
     if (!readFile.is_open() | !writeFile.is_open()) {
@@ -57,6 +58,7 @@ int main() {
         n +=1;
     }
 
+    /* close readFile and writeFile */
     readFile.close();
     writeFile.close();
 

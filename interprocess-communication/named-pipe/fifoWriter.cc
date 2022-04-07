@@ -5,6 +5,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <iostream>
 
 #define MaxLoops         12000   /* outer loop */
 #define ChunkSize           16   /* how many written at a time */
@@ -15,6 +16,7 @@ int main() {
   const char* pipeName = "./fifoChannel";
   mkfifo(pipeName, 0666);                      /* read/write for user/group/others */
   int fd = open(pipeName, O_CREAT | O_WRONLY); /* open as write-only */
+  std::cout << "opening" << std::endl;
   if (fd < 0) return -1;                       /* can't go on */
 
   int i;

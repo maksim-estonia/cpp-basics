@@ -2,7 +2,7 @@
  * A combination of ./ipc/named-pipe and ./read-write-file (write part)
  * Reads the content of a pipe (./fifoChannel) into a buffer (writeBuf)
  * Then writes the content of this buffer into a file (./output.txt).
- * Repeat until the full text file has been received.
+ * Repeat until the end-of-stream is reached.
  */
 
 #include <fstream>      /* std::fstream */
@@ -11,7 +11,7 @@
 #include <fcntl.h>      /* O_RDONLY */
 
 
-#define BUFFERSIZE  10
+#define BUFFERSIZE  1024
 
 int main() {
     /* variables for writing to writeFile */

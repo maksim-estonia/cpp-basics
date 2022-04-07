@@ -3,6 +3,7 @@
 #include <string.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <iostream>
 
 unsigned is_prime(unsigned n) { /* not pretty, but efficient */
   if (n <= 3) return n > 1;
@@ -18,6 +19,7 @@ unsigned is_prime(unsigned n) { /* not pretty, but efficient */
 int main() {
   const char* file = "./fifoChannel";
   int fd = open(file, O_RDONLY);
+  std::cout << "opening" << std::endl;
   if (fd < 0) return -1; /* no point in continuing */
   unsigned count = 0, total = 0, primes_count = 0;
 
