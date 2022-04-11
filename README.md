@@ -31,6 +31,7 @@
 - Interprocess communication 
   - [part 1](https://opensource.com/article/19/4/interprocess-communication-linux-storage)
   - [part 2](https://opensource.com/article/19/4/interprocess-communication-linux-channels)
+  - [part 2](https://opensource.com/article/19/4/interprocess-communication-linux-networking)
   - code: `./ipc/pipe-file-transfer`
   - code: `./ipc/queue-file-transfer`
   - code: `./ipc/shm-file-transfer`
