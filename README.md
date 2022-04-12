@@ -5,8 +5,6 @@
 - [cplusplus.com](https://www.cplusplus.com/)
 - [code style](https://named-data.net/doc/ndn-cpp-dev/0.4.0/code-style.html)
 
-- [riptutorial.com](https://riptutorial.com/cplusplus)
-
 ## Design patterns
 
 - [design patterns](https://refactoring.guru/design-patterns/catalog)
@@ -28,15 +26,19 @@
   - code: `./multithreading`
 - [command line arguments](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
   - code: `./command-line-arguments`
-- Interprocess communication 
+- Interprocess communication blog (example code)
   - [part 1](https://opensource.com/article/19/4/interprocess-communication-linux-storage)
   - [part 2](https://opensource.com/article/19/4/interprocess-communication-linux-channels)
-  - [part 2](https://opensource.com/article/19/4/interprocess-communication-linux-networking)
-  - code: `./ipc/pipe-file-transfer`
-  - code: `./ipc/queue-file-transfer`
-  - code: `./ipc/shm-file-transfer`
-- File (buffered) reading/writing
-  - code: `./read-write-file`
+    - unnamed pipe: `./interprocess-communication/unnamed-pipe`
+    - named pipe: `./interprocess-communication/named-pipe`
+    - message queue: `./interprocess-communication/message-queue`
+  - [part 3](https://opensource.com/article/19/4/interprocess-communication-linux-networking)
+- IPC (code snippets)
+  - pipe file transfer: `./ipc/pipe-file-transfer`
+  - queue file transfer: `./ipc/queue-file-transfer`
+  - shm file transfer: `./ipc/shm-file-transfer`
+- File (buffered) reading/writing (code snippet)
+  - `./read-write-file`
   
 
 
