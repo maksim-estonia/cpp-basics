@@ -7,6 +7,7 @@
 #include <fstream>      /* std::fstream */
 #include <iostream>     /* std::cout */
 #include <string.h>     /* strcpy */
+#include <sys/stat.h>   /* S_IRWXU S_IRWXG */
 
 int main() {
     /* variables for writing to writeFile */
@@ -33,7 +34,7 @@ int main() {
         return EXIT_FAILURE;
     }
 
-    qid = msgget(key, 0666 | IPC_CREAT); /* access if created already */
+    qid = msgget(key, S_IRWXU | S_IRWXG | IPC_CREAT); /* access if created already */
     if (qid < 0) {
         std::cerr << "Error msgget" << std::endl;
         return EXIT_FAILURE;

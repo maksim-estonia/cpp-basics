@@ -7,6 +7,7 @@
 
 #include <fstream>      /* std::fstream */
 #include <iostream>     /* std::cout */
+#include <sys/stat.h>   /* S_IRWXU S_IRWXG */
 
 int main() {
     /* variables for reading from readFile */
@@ -14,6 +15,7 @@ int main() {
     const char* readPath = "./input.txt";
     std::fstream readFile;
     int n = 1;  /* keeping track of number of full buffer sent */
+    int readBytes = 0;
 
     /* open readFile */
     readFile.open(readPath, std::fstream::in);
@@ -23,12 +25,12 @@ int main() {
     }
 
     /* determine length of file */
-    readFile.seekg(0, std::ios::beg);   /* set position to begin of file */
-    auto begin = readFile.tellg();
-    readFile.seekg(0, std::ios::end);   /* set position to end of file */
-    auto end = readFile.tellg();
-    int lengthFile = (int)(end-begin);  /* store length of file */
-    readFile.seekg(0, std::ios::beg);   /* set position back to begin */
+    // readFile.seekg(0, std::ios::beg);   /* set position to begin of file */
+    // auto begin = readFile.tellg();
+    // readFile.seekg(0, std::ios::end);   /* set position to end of file */
+    // auto end = readFile.tellg();
+    // int lengthFile = (int)(end-begin);  /* store length of file */
+    // readFile.seekg(0, std::ios::beg);   /* set position back to begin */
 
     /* ftok - convert a pathname and a project identifier to a System V IPC key */
     key_t key = ftok(PathName, ProjectId);
@@ -38,7 +40,7 @@ int main() {
     }
 
     /* msgget - get a System V message queue identifier */
-    int qid = msgget(key, 0666 | IPC_CREAT);
+    int qid = msgget(key, S_IRWXU | S_IRWXG | IPC_CREAT);
     if (qid < 0) {
         std::cerr << "Error msgget" << std::endl;
         return EXIT_FAILURE;
@@ -46,17 +48,17 @@ int main() {
 
     while (1) {
         /* reading from readFile */
-        readFile.read(readBuf, BUFFERSIZE);
+        readBytes = readFile.read(readBuf, BUFFERSIZE).gcount();
 
         /* if EOF reached, send last part and break loop */
         if (readFile.eof()) {
-            int remainingBytes = lengthFile - BUFFERSIZE*(n-1); 
+            // int remainingBytes = lengthFile - BUFFERSIZE*(n-1); 
             /* build the message */
-            readBuf[remainingBytes] = '\0'; /* necessary to copy buffer partially */
+            readBuf[readBytes] = '\0'; /* necessary to copy buffer partially */
             queuedMessage msg;
             msg.index = (long) n;
             msg.endIndex = (long) n;
-            msg.sizeMessage = remainingBytes;
+            msg.sizeMessage = readBytes;
             strcpy(msg.payload, readBuf);
             /* send the message */
             msgsnd(qid, &msg, sizeof(msg), IPC_NOWAIT); /* don't block */
