@@ -28,6 +28,7 @@
   - code: `./command-line-arguments`
 - Interprocess communication blog (example code)
   - [part 1](https://opensource.com/article/19/4/interprocess-communication-linux-storage)
+    - shared memory: `./interprocess-communication/shared-memory`
   - [part 2](https://opensource.com/article/19/4/interprocess-communication-linux-channels)
     - unnamed pipe: `./interprocess-communication/unnamed-pipe`
     - named pipe: `./interprocess-communication/named-pipe`
