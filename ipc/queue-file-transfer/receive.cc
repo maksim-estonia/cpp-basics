@@ -8,11 +8,6 @@
 #include <iostream>     /* std::cout */
 #include <string.h>     /* strcpy */
 
-void report_and_exit(const char* msg) {
-    perror(msg);
-    exit(-1);   /* EXIT_FAILURE */
-}
-
 int main() {
     /* variables for writing to writeFile */
     char writeBuf[BUFFERSIZE];
@@ -33,7 +28,7 @@ int main() {
 
     /* setup message queue */
     key = ftok(PathName, ProjectId);    /* key to identify the queue */
-    if (qid<0) {
+    if (key<0) {
         std::cerr << "error ftok" << std::endl;
         return EXIT_FAILURE;
     }
@@ -70,6 +65,8 @@ int main() {
 
     }
 
+    /* close writeFile */
+    writeFile.close();
     /* remove the queue */
     if (msgctl(qid, IPC_RMID, NULL) < 0) {
         std::cerr << "Error msgctl" << std::endl;
