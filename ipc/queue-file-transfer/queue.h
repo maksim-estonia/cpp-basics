@@ -4,7 +4,7 @@
 #define MsgLen      10
 #define MsgCount    6
 
-#define BUFFERSIZE 10
+#define BUFFERSIZE 1024
 
 typedef struct {
     long index;                  /* must be of type long */
