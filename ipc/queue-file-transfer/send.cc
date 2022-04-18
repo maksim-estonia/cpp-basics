@@ -14,7 +14,7 @@ int main() {
     char readBuf[BUFFERSIZE];
     const char* readPath = "./input.txt";
     std::fstream readFile;
-    int n = 1;  /* keeping track of number of full buffer sent */
+    long n = 1;  /* keeping track of number of full buffer sent */
     int readBytes = 0;
 
     /* open readFile */
@@ -56,14 +56,14 @@ int main() {
             /* build the message */
             readBuf[readBytes] = '\0'; /* necessary to copy buffer partially */
             queuedMessage msg;
-            msg.index = (long) n;
-            msg.endIndex = (long) n;
+            msg.index = n;
+            msg.endIndex = n;
             msg.sizeMessage = readBytes;
             strcpy(msg.payload, readBuf);
             /* send the message */
             msgsnd(qid, &msg, sizeof(msg), IPC_NOWAIT); /* don't block */
             std::cout << "---------" << std::endl;
-            std::cout << "index: " << (int) msg.index << std::endl;
+            std::cout << "index: " << msg.index << std::endl;
             std::cout << "sizeMessage: " << msg.sizeMessage << std::endl;
             std::cout << msg.payload << std::endl;
             std::cout << "---------" << std::endl;
@@ -72,8 +72,8 @@ int main() {
 
         /* build the message */
         queuedMessage msg;
-        msg.index = (long) n;
-        msg.endIndex = (long) (n+1);
+        msg.index = n;
+        msg.endIndex = (n+1);
         msg.sizeMessage = BUFFERSIZE;
         strcpy(msg.payload, readBuf);
         /* send the message */

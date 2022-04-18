@@ -17,7 +17,7 @@ int main() {
 
     /* variables for message queue */
     int qid;
-    int n = 1;
+    long n = 1;
     key_t key;
 
     /* open writeFile */
@@ -49,10 +49,10 @@ int main() {
 
         strcpy(writeBuf, msg.payload);
         std::cout << "---------" << std::endl;
-        std::cout << "index: " << (int) msg.index << std::endl;
+        std::cout << "index: " << msg.index << std::endl;
         std::cout << "sizeMessage: " << msg.sizeMessage << std::endl;
         std::cout << writeBuf << std::endl;
-        std::cout << "endIndex: " << (int) msg.endIndex << std::endl;
+        std::cout << "endIndex: " << msg.endIndex << std::endl;
         std::cout << "---------" << std::endl;
         writeFile.write(writeBuf, msg.sizeMessage);
 
